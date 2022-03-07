@@ -16,7 +16,7 @@ class HelloWorld extends PolymerElement {
         margin: 30px;
     }
     #one {
-     
+        border: solid 2px black;
         float:left;
         margin-right:0px;
         width:50%;
@@ -38,17 +38,25 @@ h3{
         border: solid 2px red;
     }
     .tabela1{
-        width: 50%;
-        float: left;
-        padding: 20px;
-        border: 2px solid red;
+       
+       
+        display: inline-block;
+        border: 1px solid red;
+        padding: 1rem 1rem;
+        vertical-align: middle;
     }
  .tabela2{
-     width: 50%;
-     float: left;
-     padding: 20px;
-     border: 2px solid red;
+     display: inline-block;
+     border: 1px solid red;
+     padding: 1rem 1rem;
+     vertical-align: middle;
  }
+    .parent {
+        border: 1px solid black;
+        padding: 2rem 2rem;
+        text-align: center;
+    }
+ 
     @media screen and (max-width: 400px) {
         #one {
             float: none;
@@ -67,8 +75,10 @@ h3{
 <div class="wrapper">
  <div id="one">
   <h3>Education</h3>
+     <div class='parent'>
      <div class=" tabela1">hello</div>
      <div class=" tabela2">hello</div>
+     </div>
  </div>
  <div id="two">
  </div>
