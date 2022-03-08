@@ -21,8 +21,10 @@ public class blog extends HorizontalLayout {
     private Button sayHello;
 
     public blog() {
-        name = new H1("// Working ...");
-
+        name = new H1("// Soon ...");
+        setSizeFull();
+        setJustifyContentMode(JustifyContentMode.CENTER);
+        getStyle().set("text-align", "center");
         add(name);
     }
 

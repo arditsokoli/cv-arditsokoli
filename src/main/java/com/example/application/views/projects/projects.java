@@ -1,9 +1,13 @@
 package com.example.application.views.projects;
 
 import com.example.application.views.MainLayout;
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.html.H1;
+import com.vaadin.flow.component.html.H6;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
@@ -15,20 +19,23 @@ import javax.annotation.security.PermitAll;
 @PageTitle("Ardit Sokoli")
 public class projects extends HorizontalLayout {
 
-    private TextField name;
+
     private Button sayHello;
 
     public projects() {
-        name = new TextField("Yoasdasdur name");
-        sayHello = new Button("Sayasdasd hello");
+        setSpacing(false);
+        VerticalLayout layout = new VerticalLayout() ;
+        layout.add(new H6("Kliko per te hapur projektin:"));
+        sayHello = new Button("Projekti");
         sayHello.addClickListener(e -> {
-            Notification.show("Heasdasdllo " + name.getValue());
+            UI.getCurrent().getPage().executeJavaScript("window.open('http://localhost:8080');");
         });
-
-        setMargin(true);
-        setVerticalComponentAlignment(Alignment.END, name, sayHello);
-
-        add(name, sayHello);
+        layout.add(sayHello);
+        layout.setAlignItems(Alignment.CENTER);
+        setSizeFull();
+        setJustifyContentMode(JustifyContentMode.CENTER);
+        getStyle().set("text-align", "center");
+        add(layout);
     }
 
 }
